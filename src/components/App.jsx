@@ -11,8 +11,8 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const onLeaveFeedback = event => {
-    switch (event.currentTarget.name) {
+  const onLeaveFeedback = name => {
+    switch (name) {
       case 'good':
         setGood(prevGood => prevGood + 1);
         break;
@@ -28,8 +28,7 @@ export const App = () => {
   };
 
   const countTotalFeedback = () => {
-    const total = good + neutral + bad;
-    return total;
+    return good + neutral + bad;
   };
 
   const countPositivePersentage = () => {
